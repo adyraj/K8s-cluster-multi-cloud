@@ -1,0 +1,11 @@
+- name: Configure K8s Master Node
+  hosts: Master_Node
+  remote_user: ec2-user
+  roles:
+    - role: kubernetes_master
+
+- name: Configure K8s Worker Node
+  hosts: Worker_Node
+  remote_user: ansible
+  roles:
+    - role: kubernetes_worker
